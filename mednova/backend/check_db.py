@@ -48,3 +48,11 @@ for log in SecurityAuditLog.objects.all()[:5]:
     print(f"   * [{log.timestamp.strftime('%Y-%m-%d %H:%M')}] {log.event_type:<22} | {log.actor}: {log.description[:50]}...")
 
 print("\n" + "=" * 70)
+print("\n[7] DATABASE TABLE SUMMARY:")
+print(f"   Total Users: {User.objects.count()}")
+print(f"   Total Doctors: {DoctorProfile.objects.count()}")
+print(f"   Total Patients: {PatientProfile.objects.count()}")
+print(f"   Total Consultations: {ConsultationCase.objects.count()}")
+print(f"   Total Communities: {Community.objects.count()}")
+print(f"   Total Community Posts: {CommunityPost.objects.count()}")
+print(f"   Total Community Replies: {CommunityReply.objects.count()}")

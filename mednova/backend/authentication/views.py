@@ -5,8 +5,24 @@ from django.contrib.auth import authenticate, login as django_login, logout as d
 import json
 from .models import DoctorProfile, PatientProfile, SecurityAuditLog
 from mednova.crypto_utils import generate_anonymous_alias
+from functools import wraps
+from django.contrib.auth.decorators import login_required
+
+
+def admin_required(view_func):
+    @wraps(view_func)
+    @login_required
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_staff and not request.user.is_superuser:
+            return JsonResponse(
+                {'error': 'Administrator access required'},
+                status=403
+            )
+        return view_func(request, *args, **kwargs)
+    return wrapper
 
 @csrf_exempt
+@admin_required
 def register_patient(request):
     if request.method == 'POST':
         try:

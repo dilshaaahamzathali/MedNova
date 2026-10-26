@@ -207,34 +207,54 @@ def list_doctors(request):
         })
     return JsonResponse({'status': 'success', 'doctors': doctors})
 
+
 @csrf_exempt
 def verify_doctor(request, doctor_id):
     if request.method == 'POST':
-       action = request.GET.get('action', 'approve')
-    
+        action = request.GET.get('action', 'approve').lower()
+
+        if action not in ['approve', 'reject']:
+            return JsonResponse(
+                {'error': 'Invalid action. Use approve or reject.'},
+                status=400
+            )
+
         try:
             doc = DoctorProfile.objects.get(id=doctor_id)
+
             if action == 'approve':
                 doc.status = 'VERIFIED'
                 doc.save()
                 SecurityAuditLog.objects.create(
                     event_type='DOCTOR_VERIFIED',
                     actor='Admin',
-                    description=f"Verified doctor {doc.full_name} (License #{doc.license_number}). Badge granted."
+                    description=(
+                        f"Verified doctor {doc.full_name} "
+                        f"(License #{doc.license_number}). Badge granted."
+                    )
                 )
-                return JsonResponse({'status': 'success', 'message': f'Doctor {doc.full_name} has been VERIFIED!'})
-            else:
-                doc.status = 'REJECTED'
-                doc.save()
-                SecurityAuditLog.objects.create(
-                    event_type='DOCTOR_REJECTED',
-                    actor='Admin',
-                    description=f"Rejected doctor registration {doc.full_name}."
-                )
-                return JsonResponse({'status': 'success', 'message': f'Doctor {doc.full_name} rejected.'})
+                return JsonResponse({
+                    'status': 'success',
+                    'message': f'Doctor {doc.full_name} has been VERIFIED!'
+                })
+
+            doc.status = 'REJECTED'
+            doc.save()
+            SecurityAuditLog.objects.create(
+                event_type='DOCTOR_REJECTED',
+                actor='Admin',
+                description=f"Rejected doctor registration {doc.full_name}."
+            )
+            return JsonResponse({
+                'status': 'success',
+                'message': f'Doctor {doc.full_name} rejected.'
+            })
+
         except DoctorProfile.DoesNotExist:
             return JsonResponse({'error': 'Doctor not found'}, status=404)
+
     return JsonResponse({'error': 'POST method required'}, status=400)
+
 
 @csrf_exempt
 def get_audit_logs(request):

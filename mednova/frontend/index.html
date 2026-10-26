@@ -1,1053 +1,1054 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedNova - Secure & Privacy-First Healthcare Platform</title>
-  
-  <!-- FontAwesome Icons & Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedNova - Secure & Privacy-First Healthcare Platform</title>
+
+    <!-- FontAwesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
 
-  <!-- Top Navigation Header (Slide 13 & 16) -->
-  <header class="app-header">
-    <div class="header-container">
-      <div class="logo-brand" onclick="MedNova.navigateTo('home')">
-        <div class="logo-icon"><i class="fa-solid fa-plus-circle"></i></div>
-        <span>MED<span style="color: #0f172a;">NOVA</span></span>
-      </div>
+    <!-- Top Navigation Header (Slide 13 & 16) -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-brand" onclick="MedNova.navigateTo('home')">
+                <div class="logo-icon"><i class="fa-solid fa-plus-circle"></i></div>
+                <span>MED<span style="color: #0f172a;">NOVA</span></span>
+            </div>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a class="nav-item active" id="nav-home" onclick="MedNova.navigateTo('home')"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a class="nav-item" id="nav-communities" onclick="MedNova.navigateTo('communities')"><i class="fa-solid fa-users"></i> Support Groups</a></li>
-          <li><a class="nav-item" id="nav-consult" onclick="MedNova.openConsultationModal()"><i class="fa-solid fa-user-doctor"></i> Doctor Consult</a></li>
-          <li><a class="nav-item" id="nav-risk" onclick="MedNova.navigateTo('risk')"><i class="fa-solid fa-heart-pulse"></i> Risk Triage</a></li>
-          <li><a class="nav-item" id="nav-doctors" onclick="MedNova.navigateTo('doctors')"><i class="fa-solid fa-stethoscope"></i> Verified Doctors</a></li>
-          <li><a class="nav-item" id="nav-doctor-register" onclick="MedNova.navigateTo('doctor-register')"><i class="fa-solid fa-hospital-user"></i> Doctor Registration</a></li>
-          <li id="nav-my-consultations-link" class="hidden"><a class="nav-item" id="nav-my-consultations" onclick="MedNova.navigateTo('my-consultations')"><i class="fa-solid fa-clipboard-check"></i> My Consultations</a></li>
-          <li id="nav-admin-link" class="hidden"><a class="nav-item" id="nav-admin" onclick="MedNova.navigateTo('admin')"><i class="fa-solid fa-shield-halved"></i> Admin Portal</a></li>
-          <li id="nav-doctor-link" class="hidden"><a class="nav-item" id="nav-doctor-portal" onclick="MedNova.navigateTo('doctor-portal')"><i class="fa-solid fa-notes-medical"></i> Doctor Inbox</a></li>
-        </ul>
-      </nav>
+            <nav>
+                <ul class="nav-links">
+                    <li><a class="nav-item active" id="nav-home" onclick="MedNova.navigateTo('home')"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-item" id="nav-communities" onclick="MedNova.navigateTo('communities')"><i class="fa-solid fa-users"></i> Support Groups</a></li>
+                    <li><a class="nav-item" id="nav-consult" onclick="MedNova.openConsultationModal()"><i class="fa-solid fa-user-doctor"></i> Doctor Consult</a></li>
+                    <li><a class="nav-item" id="nav-risk" onclick="MedNova.navigateTo('risk')"><i class="fa-solid fa-heart-pulse"></i> Risk Triage</a></li>
+                    <li><a class="nav-item" id="nav-doctors" onclick="MedNova.navigateTo('doctors')"><i class="fa-solid fa-stethoscope"></i> Verified Doctors</a></li>
+                    <li><a class="nav-item" id="nav-doctor-register" onclick="MedNova.navigateTo('doctor-register')"><i class="fa-solid fa-hospital-user"></i> Doctor Registration</a></li>
+                    <li id="nav-my-consultations-link" class="hidden"><a class="nav-item" id="nav-my-consultations" onclick="MedNova.navigateTo('my-consultations')"><i class="fa-solid fa-clipboard-check"></i> My Consultations</a></li>
+                    <li id="nav-admin-link" class="hidden"><a class="nav-item" id="nav-admin" onclick="MedNova.navigateTo('admin')"><i class="fa-solid fa-shield-halved"></i> Admin Portal</a></li>
+                    <li id="nav-doctor-link" class="hidden"><a class="nav-item" id="nav-doctor-portal" onclick="MedNova.navigateTo('doctor-portal')"><i class="fa-solid fa-notes-medical"></i> Doctor Inbox</a></li>
+                </ul>
+            </nav>
 
-      <div class="header-right">
-        <!-- Guest Actions -->
-        <div id="guest-actions" style="display: flex; gap: 0.6rem; align-items: center;">
-          <button class="btn btn-outline btn-sm" onclick="MedNova.openLoginModal()">Login</button>
-          <button class="btn btn-primary btn-sm" onclick="MedNova.openPatientSignupModal()">Patient Signup</button>
-          <button class="btn btn-outline btn-sm" onclick="MedNova.openDoctorApplyModal()">Doctor Apply</button>
+            <div class="header-right">
+                <!-- Guest Actions -->
+                <div id="guest-actions" style="display: flex; gap: 0.6rem; align-items: center;">
+                    <button class="btn btn-outline btn-sm" onclick="MedNova.openLoginModal()">Login</button>
+                    <button class="btn btn-primary btn-sm" onclick="MedNova.openPatientSignupModal()">Patient Signup</button>
+                    <button class="btn btn-outline btn-sm" onclick="MedNova.openDoctorApplyModal()">Doctor Apply</button>
+                </div>
+
+                <!-- Logged In User Badge -->
+                <div id="user-badge" class="hidden" style="display: flex; gap: 0.75rem; align-items: center;">
+                    <div style="text-align: right;">
+                        <div id="user-display-alias" style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">bluewhale</div>
+                        <div id="user-display-role" class="badge badge-blue">PATIENT</div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="MedNova.logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <!-- Logged In User Badge -->
-        <div id="user-badge" class="hidden" style="display: flex; gap: 0.75rem; align-items: center;">
-          <div style="text-align: right;">
-            <div id="user-display-alias" style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">bluewhale</div>
-            <div id="user-display-role" class="badge badge-blue">PATIENT</div>
-          </div>
-          <button class="btn btn-outline btn-sm" onclick="MedNova.logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-        </div>
-      </div>
-    </div>
-  </header>
+    <!-- Main View Container -->
+    <main class="main-wrapper">
 
-  <!-- Main View Container -->
-  <main class="main-wrapper">
+        <!-- ================= 1. HOME VIEW (Pleasant Standard Healthcare Format) ================= -->
+        <div id="view-home">
 
-    <!-- ================= 1. HOME VIEW (Pleasant Standard Healthcare Format) ================= -->
-    <div id="view-home">
-      
-      <!-- Hero Section -->
-      <section class="hero-section" style="padding-top: 2.5rem; padding-bottom: 2rem;">
-        <div class="hero-badge-pill">
-          <i class="fa-solid fa-shield-halved text-primary"></i> 
-          <span>Zero-Knowledge Architecture &bull; Client-to-DB AES-256 Encryption</span>
-        </div>
+            <!-- Hero Section -->
+            <section class="hero-section" style="padding-top: 2.5rem; padding-bottom: 2rem;">
+                <div class="hero-badge-pill">
+                    <i class="fa-solid fa-shield-halved text-primary"></i>
+                    <span>Zero-Knowledge Architecture &bull; Client-to-DB AES-256 Encryption</span>
+                </div>
 
-        <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1.25rem;">
-          Healthcare Simplified For <br>
-          <span class="highlight">Patients and Doctors</span>
-        </h1>
-        
-        <p class="hero-subtitle" style="font-size: 1.12rem; max-width: 760px; margin-bottom: 2rem;">
-          MedNova connects patients directly with verified healthcare professionals, tracks sensitive symptom records, and connects disease support communities—with complete anonymity and zero fear of judgment.
-        </p>
-        
-        <div class="hero-cta-group" style="margin-bottom: 2rem;">
-          <button class="btn btn-primary hero-cta-primary" onclick="MedNova.openPatientSignupModal()">
+                <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1.25rem;">
+                    Healthcare Simplified For <br>
+                    <span class="highlight">Patients and Doctors</span>
+                </h1>
+
+                <p class="hero-subtitle" style="font-size: 1.12rem; max-width: 760px; margin-bottom: 2rem;">
+                    MedNova connects patients directly with verified healthcare professionals, tracks sensitive symptom records, and connects disease support communities—with complete anonymity and zero fear of judgment.
+                </p>
+
+                <div class="hero-cta-group" style="margin-bottom: 2rem;">
+                    <button class="btn btn-primary hero-cta-primary" onclick="MedNova.openPatientSignupModal()">
             <i class="fa-solid fa-user-plus"></i> Patient Registration <i class="fa-solid fa-arrow-right"></i>
           </button>
-          <button class="btn btn-outline hero-cta-secondary" onclick="MedNova.openDoctorApplyModal()">
+                    <button class="btn btn-outline hero-cta-secondary" onclick="MedNova.openDoctorApplyModal()">
             <i class="fa-solid fa-hospital-user"></i> Doctor Application
           </button>
-          <button class="btn btn-outline hero-cta-secondary" onclick="MedNova.navigateTo('risk')">
+                    <button class="btn btn-outline hero-cta-secondary" onclick="MedNova.navigateTo('risk')">
             <i class="fa-solid fa-heart-pulse text-danger"></i> Check Health Risk Free
           </button>
-        </div>
+                </div>
 
-        <div class="hero-social-proof">
-          <span class="star-rating">
+                <div class="hero-social-proof">
+                    <span class="star-rating">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </span>
-          <span><strong>4.9/5 Clinical Trust Index</strong></span>
-          <span>&bull;</span>
-          <span>Over 10,000+ Confidential Consultations</span>
-          <span>&bull;</span>
-          <span><i class="fa-solid fa-lock text-success"></i> 100% Stigma-Free & Protected</span>
-        </div>
+                    <span><strong>4.9/5 Clinical Trust Index</strong></span>
+                    <span>&bull;</span>
+                    <span>Over 10,000+ Confidential Consultations</span>
+                    <span>&bull;</span>
+                    <span><i class="fa-solid fa-lock text-success"></i> 100% Stigma-Free & Protected</span>
+                </div>
 
-        <!-- 4 Live Counter Cards (Slide 13) -->
-        <div class="stats-row" style="margin-bottom: 3.5rem;">
-          <div class="stat-card">
-            <div class="stat-icon blue"><i class="fa-solid fa-users"></i></div>
-            <div class="stat-number" id="stat-patients">2+</div>
-            <div class="stat-label">Registered Patients</div>
-          </div>
+                <!-- 4 Live Counter Cards (Slide 13) -->
+                <div class="stats-row" style="margin-bottom: 3.5rem;">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-number" id="stat-patients">2+</div>
+                        <div class="stat-label">Registered Patients</div>
+                    </div>
 
-          <div class="stat-card">
-            <div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
-            <div class="stat-number" id="stat-doctors">1+</div>
-            <div class="stat-label">Verified Healthcare Pros</div>
-          </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
+                        <div class="stat-number" id="stat-doctors">1+</div>
+                        <div class="stat-label">Verified Healthcare Pros</div>
+                    </div>
 
-          <div class="stat-card">
-            <div class="stat-icon amber"><i class="fa-solid fa-comment-medical"></i></div>
-            <div class="stat-number" id="stat-consultations">340+</div>
-            <div class="stat-label">Doctor Consultations</div>
-          </div>
+                    <div class="stat-card">
+                        <div class="stat-icon amber"><i class="fa-solid fa-comment-medical"></i></div>
+                        <div class="stat-number" id="stat-consultations">340+</div>
+                        <div class="stat-label">Doctor Consultations</div>
+                    </div>
 
-          <div class="stat-card">
-            <div class="stat-icon teal"><i class="fa-solid fa-clipboard-list"></i></div>
-            <div class="stat-number" id="stat-posts">2+</div>
-            <div class="stat-label">Community Posts</div>
-          </div>
-        </div>
-      </section>
+                    <div class="stat-card">
+                        <div class="stat-icon teal"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <div class="stat-number" id="stat-posts">2+</div>
+                        <div class="stat-label">Community Posts</div>
+                    </div>
+                </div>
+            </section>
 
-      <!-- SECTION: How It Works (Standard 3-Step Process) -->
-      <section class="section-container" style="border-top: 1px solid var(--border-color);">
-        <div class="section-header">
-          <span class="section-tag">How MedNova Works</span>
-          <h2 class="section-title">Confidential Healthcare in 3 Simple Steps</h2>
-          <p class="section-subtitle">We decoupled personal identities from clinical discussions so you can seek medical guidance without anxiety or stigma.</p>
-        </div>
+            <!-- SECTION: How It Works (Standard 3-Step Process) -->
+            <section class="section-container" style="border-top: 1px solid var(--border-color);">
+                <div class="section-header">
+                    <span class="section-tag">How MedNova Works</span>
+                    <h2 class="section-title">Confidential Healthcare in 3 Simple Steps</h2>
+                    <p class="section-subtitle">We decoupled personal identities from clinical discussions so you can seek medical guidance without anxiety or stigma.</p>
+                </div>
 
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Join With A Pseudonym</h3>
-            <p class="step-text">
-              Sign up using your chosen alias or let our Zero-Knowledge generator assign you a shielded pseudonym (e.g., <code>AnonPatient#8F2A9C</code>). Your real identity is never exposed publicly.
-            </p>
-          </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">Join With A Pseudonym</h3>
+                        <p class="step-text">
+                            Sign up using your chosen alias or let our Zero-Knowledge generator assign you a shielded pseudonym (e.g., <code>AnonPatient#8F2A9C</code>). Your real identity is never exposed publicly.
+                        </p>
+                    </div>
 
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <h3 class="step-title">Seek Peer or Doctor Care</h3>
-            <p class="step-text">
-              Share real experiences in specialized disease communities (Oncology, HIV, Cardiology, Diabetes) or request 1-on-1 consultations with verified practitioners.
-            </p>
-          </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">Seek Peer or Doctor Care</h3>
+                        <p class="step-text">
+                            Share real experiences in specialized disease communities (Oncology, HIV, Cardiology, Diabetes) or request 1-on-1 consultations with verified practitioners.
+                        </p>
+                    </div>
 
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <h3 class="step-title">AES-256 Protected Resolution</h3>
-            <p class="step-text">
-              All symptoms and journals are encrypted at rest with AES-256. Only your assigned certified doctor decrypts your case to provide prescriptions and clinical guidance.
-            </p>
-          </div>
-        </div>
-      </section>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">AES-256 Protected Resolution</h3>
+                        <p class="step-text">
+                            All symptoms and journals are encrypted at rest with AES-256. Only your assigned certified doctor decrypts your case to provide prescriptions and clinical guidance.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-      <!-- SECTION: Core Platform Pillars -->
-      <section class="section-container" style="border-top: 1px solid var(--border-color);">
-        <div class="section-header">
-          <span class="section-tag">Platform Architecture</span>
-          <h2 class="section-title">Engineered For Absolute Medical Confidentiality</h2>
-          <p class="section-subtitle">Bridging the gap between open clinical communication and advanced cryptography.</p>
-        </div>
+            <!-- SECTION: Core Platform Pillars -->
+            <section class="section-container" style="border-top: 1px solid var(--border-color);">
+                <div class="section-header">
+                    <span class="section-tag">Platform Architecture</span>
+                    <h2 class="section-title">Engineered For Absolute Medical Confidentiality</h2>
+                    <p class="section-subtitle">Bridging the gap between open clinical communication and advanced cryptography.</p>
+                </div>
 
-        <div class="features-grid">
-          <div class="feature-box">
-            <div class="feature-icon-bubble blue"><i class="fa-solid fa-user-shield"></i></div>
-            <h3 class="feature-title">Zero-Knowledge Alias Shield</h3>
-            <p class="feature-desc">Pseudonymous hashing decouples user accounts from public interactions, allowing honest health discussions without social judgment.</p>
-          </div>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon-bubble blue"><i class="fa-solid fa-user-shield"></i></div>
+                        <h3 class="feature-title">Zero-Knowledge Alias Shield</h3>
+                        <p class="feature-desc">Pseudonymous hashing decouples user accounts from public interactions, allowing honest health discussions without social judgment.</p>
+                    </div>
 
-          <div class="feature-box">
-            <div class="feature-icon-bubble green"><i class="fa-solid fa-lock"></i></div>
-            <h3 class="feature-title">AES-256 Symmetric Encryption</h3>
-            <p class="feature-desc">Sensitive health records and private doctor messaging are encrypted at rest, preventing unauthorized database surveillance.</p>
-          </div>
+                    <div class="feature-box">
+                        <div class="feature-icon-bubble green"><i class="fa-solid fa-lock"></i></div>
+                        <h3 class="feature-title">AES-256 Symmetric Encryption</h3>
+                        <p class="feature-desc">Sensitive health records and private doctor messaging are encrypted at rest, preventing unauthorized database surveillance.</p>
+                    </div>
 
-          <div class="feature-box">
-            <div class="feature-icon-bubble purple"><i class="fa-solid fa-id-card-clip"></i></div>
-            <h3 class="feature-title">Doctor License Verification</h3>
-            <p class="feature-desc">Every medical practitioner is vetted by administrators against national medical licensing councils before consulting patients.</p>
-          </div>
+                    <div class="feature-box">
+                        <div class="feature-icon-bubble purple"><i class="fa-solid fa-id-card-clip"></i></div>
+                        <h3 class="feature-title">Doctor License Verification</h3>
+                        <p class="feature-desc">Every medical practitioner is vetted by administrators against national medical licensing councils before consulting patients.</p>
+                    </div>
 
-          <div class="feature-box">
-            <div class="feature-icon-bubble teal"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h3 class="feature-title">AI Symptom & Risk Triage</h3>
-            <p class="feature-desc">Automated vitals and keyword risk assessment provides preliminary triage analysis before clinical escalation.</p>
-          </div>
-        </div>
-      </section>
+                    <div class="feature-box">
+                        <div class="feature-icon-bubble teal"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3 class="feature-title">AI Symptom & Risk Triage</h3>
+                        <p class="feature-desc">Automated vitals and keyword risk assessment provides preliminary triage analysis before clinical escalation.</p>
+                    </div>
+                </div>
+            </section>
 
-      <!-- SECTION: Featured Support Groups Preview -->
-      <section class="section-container" style="border-top: 1px solid var(--border-color);">
-        <div class="section-header">
-          <span class="section-tag">Peer Communities</span>
-          <h2 class="section-title">Explore Specialized Disease Support Groups</h2>
-          <p class="section-subtitle">Safe, stigma-free circles where patients and caregivers share lived recovery experiences.</p>
-        </div>
+            <!-- SECTION: Featured Support Groups Preview -->
+            <section class="section-container" style="border-top: 1px solid var(--border-color);">
+                <div class="section-header">
+                    <span class="section-tag">Peer Communities</span>
+                    <h2 class="section-title">Explore Specialized Disease Support Groups</h2>
+                    <p class="section-subtitle">Safe, stigma-free circles where patients and caregivers share lived recovery experiences.</p>
+                </div>
 
-        <div class="communities-preview-grid">
-          <div class="comm-preview-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="badge badge-blue">Cardiology</span>
-              <i class="fa-solid fa-heart-pulse text-danger" style="font-size: 1.25rem;"></i>
-            </div>
-            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">Cardiology & Heart Health</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              Support network for tracking blood pressure, cardiovascular recovery, diet, and lifestyle adjustments.
-            </p>
-            <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+                <div class="communities-preview-grid">
+                    <div class="comm-preview-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="badge badge-blue">Cardiology</span>
+                            <i class="fa-solid fa-heart-pulse text-danger" style="font-size: 1.25rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">Cardiology & Heart Health</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+                            Support network for tracking blood pressure, cardiovascular recovery, diet, and lifestyle adjustments.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
 
-          <div class="comm-preview-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="badge badge-green">Oncology</span>
-              <i class="fa-solid fa-ribbon text-primary" style="font-size: 1.25rem;"></i>
-            </div>
-            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">Oncology & Cancer Care</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              A compassionate, confidential haven navigating chemotherapy, radiation, surgery, and long-term remission.
-            </p>
-            <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+                    <div class="comm-preview-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="badge badge-green">Oncology</span>
+                            <i class="fa-solid fa-ribbon text-primary" style="font-size: 1.25rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">Oncology & Cancer Care</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+                            A compassionate, confidential haven navigating chemotherapy, radiation, surgery, and long-term remission.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
 
-          <div class="comm-preview-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="badge badge-amber">Infectious Disease</span>
-              <i class="fa-solid fa-shield-virus text-warning" style="font-size: 1.25rem;"></i>
-            </div>
-            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">HIV & Immunology Circle</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              100% stigma-free discussions on ART medication adherence, viral suppression, holistic wellness, and mental care.
-            </p>
-            <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+                    <div class="comm-preview-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="badge badge-amber">Infectious Disease</span>
+                            <i class="fa-solid fa-shield-virus text-warning" style="font-size: 1.25rem;"></i>
+                        </div>
+                        <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">HIV & Immunology Circle</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+                            100% stigma-free discussions on ART medication adherence, viral suppression, holistic wellness, and mental care.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
 
-          <div class="comm-preview-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="badge badge-slate">Psychiatry</span>
-              <i class="fa-solid fa-brain text-purple" style="font-size: 1.25rem; color: #9333ea;"></i>
-            </div>
-            <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">Mental Health & Anxiety</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              Judgment-free peer support for anxiety grounding techniques, mindfulness, and cognitive resilience.
-            </p>
-            <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </div>
-      </section>
+                    <div class="comm-preview-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <span class="badge badge-slate">Psychiatry</span>
+                            <i class="fa-solid fa-brain text-purple" style="font-size: 1.25rem; color: #9333ea;"></i>
+                        </div>
+                        <h4 style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.35rem;">Mental Health & Anxiety</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
+                            Judgment-free peer support for anxiety grounding techniques, mindfulness, and cognitive resilience.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('communities')">Enter Group <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
 
-      <!-- SECTION: Real Patient & Clinician Stories -->
-      <section class="section-container" style="border-top: 1px solid var(--border-color);">
-        <div class="section-header">
-          <span class="section-tag">Community Voices</span>
-          <h2 class="section-title">Trusted By Patients, Guided By Doctors</h2>
-          <p class="section-subtitle">Real experiences highlighting the comfort of stigma-free medical discussion.</p>
-        </div>
+            <!-- SECTION: Real Patient & Clinician Stories -->
+            <section class="section-container" style="border-top: 1px solid var(--border-color);">
+                <div class="section-header">
+                    <span class="section-tag">Community Voices</span>
+                    <h2 class="section-title">Trusted By Patients, Guided By Doctors</h2>
+                    <p class="section-subtitle">Real experiences highlighting the comfort of stigma-free medical discussion.</p>
+                </div>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="star-rating" style="margin-bottom: 0.75rem;">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-quote">
-              "Being able to discuss my BP spikes and cholesterol medication under a pseudonym gave me the courage to ask questions I was too embarrassed to bring up at my local clinic."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fa-solid fa-user-shield"></i></div>
-              <div>
-                <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">AnonPatient#8F2A9C</div>
-                <div style="font-size: 0.78rem; color: var(--text-muted);">Cardiology Support Member</div>
-              </div>
-            </div>
-          </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="star-rating" style="margin-bottom: 0.75rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Being able to discuss my BP spikes and cholesterol medication under a pseudonym gave me the courage to ask questions I was too embarrassed to bring up at my local clinic."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">AnonPatient#8F2A9C</div>
+                                <div style="font-size: 0.78rem; color: var(--text-muted);">Cardiology Support Member</div>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="testimonial-card">
-            <div class="star-rating" style="margin-bottom: 0.75rem;">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-quote">
-              "MedNova lets me review client-encrypted symptom descriptions before issuing guidance. Patients are far more honest about their symptoms when their personal identity is shielded."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" style="background: #f0fdf4; color: #16a34a;"><i class="fa-solid fa-user-doctor"></i></div>
-              <div>
-                <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">Dr. Elizabeth Vance, MD</div>
-                <div style="font-size: 0.78rem; color: var(--text-muted);">Cardiology Practitioner</div>
-              </div>
-            </div>
-          </div>
+                    <div class="testimonial-card">
+                        <div class="star-rating" style="margin-bottom: 0.75rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">
+                            "MedNova lets me review client-encrypted symptom descriptions before issuing guidance. Patients are far more honest about their symptoms when their personal identity is shielded."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background: #f0fdf4; color: #16a34a;"><i class="fa-solid fa-user-doctor"></i></div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">Dr. Elizabeth Vance, MD</div>
+                                <div style="font-size: 0.78rem; color: var(--text-muted);">Cardiology Practitioner</div>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="testimonial-card">
-            <div class="star-rating" style="margin-bottom: 0.75rem;">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-quote">
-              "The HIV support circle connected me with others experiencing the same medication adjustment symptoms. The zero-judgment atmosphere is life-changing."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fa-solid fa-user-shield"></i></div>
-              <div>
-                <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">AnonPatient#9E4D1A</div>
-                <div style="font-size: 0.78rem; color: var(--text-muted);">Immunology Circle Member</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    <div class="testimonial-card">
+                        <div class="star-rating" style="margin-bottom: 0.75rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">
+                            "The HIV support circle connected me with others experiencing the same medication adjustment symptoms. The zero-judgment atmosphere is life-changing."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">AnonPatient#9E4D1A</div>
+                                <div style="font-size: 0.78rem; color: var(--text-muted);">Immunology Circle Member</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <!-- Welcoming Bottom CTA Banner -->
-      <section class="cta-banner">
-        <h2>Take Control of Your Health in Total Confidentiality</h2>
-        <p>Connect with compassionate communities, compute your health risk, and consult verified doctors today without fear of exposure.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <button class="btn btn-primary" style="background: #ffffff; color: var(--primary); padding: 0.75rem 1.75rem; font-size: 1rem;" onclick="MedNova.openPatientSignupModal()">
+            <!-- Welcoming Bottom CTA Banner -->
+            <section class="cta-banner">
+                <h2>Take Control of Your Health in Total Confidentiality</h2>
+                <p>Connect with compassionate communities, compute your health risk, and consult verified doctors today without fear of exposure.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" style="background: #ffffff; color: var(--primary); padding: 0.75rem 1.75rem; font-size: 1rem;" onclick="MedNova.openPatientSignupModal()">
             <i class="fa-solid fa-user-plus"></i> Create Patient Account
           </button>
-          <button class="btn btn-outline" style="border-color: rgba(255,255,255,0.7); color: #ffffff; background: transparent; padding: 0.75rem 1.75rem; font-size: 1rem;" onclick="MedNova.navigateTo('risk')">
+                    <button class="btn btn-outline" style="border-color: rgba(255,255,255,0.7); color: #ffffff; background: transparent; padding: 0.75rem 1.75rem; font-size: 1rem;" onclick="MedNova.navigateTo('risk')">
             <i class="fa-solid fa-heart-pulse"></i> Check Symptom Risk
           </button>
+                </div>
+            </section>
+
         </div>
-      </section>
 
-    </div>
+        <!-- ================= 2. DISEASE SUPPORT GROUPS VIEW (Slide 16) ================= -->
+        <div id="view-communities" class="hidden">
 
-    <!-- ================= 2. DISEASE SUPPORT GROUPS VIEW (Slide 16) ================= -->
-    <div id="view-communities" class="hidden">
-      
-      <!-- LOCKED GATE ACCESS SCREEN (Shown when user is NOT a registered patient) -->
-      <div id="communities-locked-gate" class="hidden" style="max-width: 780px; margin: 2.5rem auto 3.5rem;">
-        <div class="card" style="padding: 3.25rem 2.5rem; text-align: center; border-top: 4px solid var(--primary); box-shadow: var(--shadow-md);">
-          <div style="width: 84px; height: 84px; border-radius: 50%; background: #eff6ff; color: var(--primary); display: inline-flex; align-items: center; justify-content: center; font-size: 2.4rem; margin-bottom: 1.5rem; border: 2px dashed #93c5fd;">
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          
-          <div>
-            <span class="badge badge-amber" style="font-size: 0.85rem; padding: 0.35rem 0.95rem;">
+            <!-- LOCKED GATE ACCESS SCREEN (Shown when user is NOT a registered patient) -->
+            <div id="communities-locked-gate" class="hidden" style="max-width: 780px; margin: 2.5rem auto 3.5rem;">
+                <div class="card" style="padding: 3.25rem 2.5rem; text-align: center; border-top: 4px solid var(--primary); box-shadow: var(--shadow-md);">
+                    <div style="width: 84px; height: 84px; border-radius: 50%; background: #eff6ff; color: var(--primary); display: inline-flex; align-items: center; justify-content: center; font-size: 2.4rem; margin-bottom: 1.5rem; border: 2px dashed #93c5fd;">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <div>
+                        <span class="badge badge-amber" style="font-size: 0.85rem; padding: 0.35rem 0.95rem;">
               <i class="fa-solid fa-shield-halved"></i> Registered Patient Access Only
             </span>
-          </div>
+                    </div>
 
-          <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 1.1rem; margin-bottom: 0.75rem;">
-            Disease Support Groups (Protected Sanctuary)
-          </h2>
-          
-          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; max-width: 620px; margin: 0 auto 2rem;">
-            MedNova support groups provide safe, stigma-free peer circles for sensitive conditions including <strong>Cardiology, Oncology & Cancer, HIV & Immunology, Diabetes, Respiratory, and Mental Health</strong>. To protect member privacy and emotional safety, access is restricted strictly to registered patients.
-          </p>
+                    <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 1.1rem; margin-bottom: 0.75rem;">
+                        Disease Support Groups (Protected Sanctuary)
+                    </h2>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; text-align: left;">
-            <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem;">
-              <div style="color: var(--primary); font-size: 1.35rem; margin-bottom: 0.4rem;"><i class="fa-solid fa-user-secret"></i></div>
-              <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); margin-bottom: 0.25rem;">Zero-Knowledge Pseudonyms</div>
-              <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Participate anonymously under an auto-generated pseudonym without revealing legal identity.</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem;">
-              <div style="color: #16a34a; font-size: 1.35rem; margin-bottom: 0.4rem;"><i class="fa-solid fa-shield-heart"></i></div>
-              <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); margin-bottom: 0.25rem;">Stigma-Free Peer Circles</div>
-              <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Exchange lived treatment advice, coping strategies, and emotional strength freely.</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem;">
-              <div style="color: #9333ea; font-size: 1.35rem; margin-bottom: 0.4rem;"><i class="fa-solid fa-stethoscope"></i></div>
-              <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); margin-bottom: 0.25rem;">Doctor-Supervised Safety</div>
-              <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Licensed medical professionals monitor threads to ensure medical guidance accuracy.</div>
-            </div>
-          </div>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; max-width: 620px; margin: 0 auto 2rem;">
+                        MedNova support groups provide safe, stigma-free peer circles for sensitive conditions including <strong>Cardiology, Oncology & Cancer, HIV & Immunology, Diabetes, Respiratory, and Mental Health</strong>. To protect member privacy
+                        and emotional safety, access is restricted strictly to registered patients.
+                    </p>
 
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button class="btn btn-primary" style="padding: 0.85rem 1.85rem; font-size: 1rem;" onclick="MedNova.openPatientSignupModal()">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; text-align: left;">
+                        <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem;">
+                            <div style="color: var(--primary); font-size: 1.35rem; margin-bottom: 0.4rem;"><i class="fa-solid fa-user-secret"></i></div>
+                            <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); margin-bottom: 0.25rem;">Zero-Knowledge Pseudonyms</div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Participate anonymously under an auto-generated pseudonym without revealing legal identity.</div>
+                        </div>
+                        <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem;">
+                            <div style="color: #16a34a; font-size: 1.35rem; margin-bottom: 0.4rem;"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); margin-bottom: 0.25rem;">Stigma-Free Peer Circles</div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Exchange lived treatment advice, coping strategies, and emotional strength freely.</div>
+                        </div>
+                        <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem;">
+                            <div style="color: #9333ea; font-size: 1.35rem; margin-bottom: 0.4rem;"><i class="fa-solid fa-stethoscope"></i></div>
+                            <div style="font-weight: 700; font-size: 0.92rem; color: var(--text-main); margin-bottom: 0.25rem;">Doctor-Supervised Safety</div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Licensed medical professionals monitor threads to ensure medical guidance accuracy.</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn btn-primary" style="padding: 0.85rem 1.85rem; font-size: 1rem;" onclick="MedNova.openPatientSignupModal()">
               <i class="fa-solid fa-user-plus"></i> Register as Patient (Free & Anonymous)
             </button>
-            <button class="btn btn-outline" style="padding: 0.85rem 1.85rem; font-size: 1rem;" onclick="MedNova.openLoginModal()">
+                        <button class="btn btn-outline" style="padding: 0.85rem 1.85rem; font-size: 1rem;" onclick="MedNova.openLoginModal()">
               <i class="fa-solid fa-right-to-bracket"></i> Patient Sign In
             </button>
-          </div>
+                    </div>
 
-          <p id="gate-doctor-notice" class="hidden" style="margin-top: 1.5rem; font-size: 0.85rem; color: #b45309; background: #fffbeb; padding: 0.65rem 1rem; border-radius: 8px; border: 1px solid #fde68a; display: inline-block;">
-            <i class="fa-solid fa-user-doctor"></i> You are currently signed in as a Doctor. Support groups are patient peer sanctuaries. You can review clinical consultations in your <a href="javascript:void(0)" onclick="MedNova.navigateTo('doctor-portal')" style="font-weight: 700; color: #b45309; text-decoration: underline;">Doctor Portal</a>.
-          </p>
+                    <p id="gate-doctor-notice" class="hidden" style="margin-top: 1.5rem; font-size: 0.85rem; color: #b45309; background: #fffbeb; padding: 0.65rem 1rem; border-radius: 8px; border: 1px solid #fde68a; display: inline-block;">
+                        <i class="fa-solid fa-user-doctor"></i> You are currently signed in as a Doctor. Support groups are patient peer sanctuaries. You can review clinical consultations in your <a href="javascript:void(0)" onclick="MedNova.navigateTo('doctor-portal')"
+                            style="font-weight: 700; color: #b45309; text-decoration: underline;">Doctor Portal</a>.
+                    </p>
 
-          <div style="margin-top: 1.75rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1.1rem;">
-            <i class="fa-solid fa-shield-halved text-primary"></i> 256-bit AES encryption protects patient records and conversations from unauthorized disclosure.
-          </div>
-        </div>
-      </div>
-
-      <!-- UNLOCKED SUPPORT GROUPS (Shown for registered patients) -->
-      <div id="communities-unlocked-content" class="support-groups-container hidden">
-        
-        <!-- Left Sidebar: Disease Support Groups -->
-        <aside class="communities-sidebar">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-            <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Communities</span>
-          </div>
-          <h2 class="sidebar-title">Disease Support Groups</h2>
-          
-          <div id="communities-list">
-            <!-- Dynamically populated or default fallback -->
-          </div>
-        </aside>
-
-        <!-- Right Main: Forum Feed -->
-        <div class="community-feed">
-          <!-- Active Patient Privacy Shield Ribbon -->
-          <div style="display: flex; align-items: center; justify-content: space-between; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 0.75rem 1.15rem; margin-bottom: 1rem; color: #1e40af; font-size: 0.85rem;">
-            <div style="display: flex; align-items: center; gap: 0.65rem;">
-              <i class="fa-solid fa-user-shield" style="font-size: 1.15rem; color: var(--primary);"></i>
-              <span><strong>Patient Privacy Shield Active:</strong> Browsing as <span id="community-patient-alias" class="author-pill" style="display: inline-flex; padding: 0.15rem 0.55rem; font-size: 0.78rem;"><i class="fa-solid fa-user-shield"></i> AnonPatient#...</span>. Your real identity is never revealed.</span>
+                    <div style="margin-top: 1.75rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 1.1rem;">
+                        <i class="fa-solid fa-shield-halved text-primary"></i> 256-bit AES encryption protects patient records and conversations from unauthorized disclosure.
+                    </div>
+                </div>
             </div>
-            <span class="badge badge-green" style="font-size: 0.75rem;"><i class="fa-solid fa-circle-check"></i> Registered Patient</span>
-          </div>
 
-          <div class="feed-header">
-            <div>
-              <h2 class="feed-title" id="active-community-name">Cardiology & Heart Health</h2>
-              <p class="feed-desc" id="active-community-desc">Community advice and experience sharing</p>
-            </div>
-            <button class="btn btn-primary" onclick="MedNova.openNewPostModal()">
+            <!-- UNLOCKED SUPPORT GROUPS (Shown for registered patients) -->
+            <div id="communities-unlocked-content" class="support-groups-container hidden">
+
+                <!-- Left Sidebar: Disease Support Groups -->
+                <aside class="communities-sidebar">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Communities</span>
+                    </div>
+                    <h2 class="sidebar-title">Disease Support Groups</h2>
+
+                    <div id="communities-list">
+                        <!-- Dynamically populated or default fallback -->
+                    </div>
+                </aside>
+
+                <!-- Right Main: Forum Feed -->
+                <div class="community-feed">
+                    <!-- Active Patient Privacy Shield Ribbon -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 0.75rem 1.15rem; margin-bottom: 1rem; color: #1e40af; font-size: 0.85rem;">
+                        <div style="display: flex; align-items: center; gap: 0.65rem;">
+                            <i class="fa-solid fa-user-shield" style="font-size: 1.15rem; color: var(--primary);"></i>
+                            <span><strong>Patient Privacy Shield Active:</strong> Browsing as <span id="community-patient-alias" class="author-pill" style="display: inline-flex; padding: 0.15rem 0.55rem; font-size: 0.78rem;"><i class="fa-solid fa-user-shield"></i> AnonPatient#...</span>.
+                            Your real identity is never revealed.</span>
+                        </div>
+                        <span class="badge badge-green" style="font-size: 0.75rem;"><i class="fa-solid fa-circle-check"></i> Registered Patient</span>
+                    </div>
+
+                    <div class="feed-header">
+                        <div>
+                            <h2 class="feed-title" id="active-community-name">Cardiology & Heart Health</h2>
+                            <p class="feed-desc" id="active-community-desc">Community advice and experience sharing</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="MedNova.openNewPostModal()">
               <i class="fa-solid fa-pen-to-square"></i> New Post
             </button>
-          </div>
+                    </div>
 
-          <!-- Feed Posts -->
-          <div id="community-posts-container">
-            <!-- Post cards populated here -->
-          </div>
+                    <!-- Feed Posts -->
+                    <div id="community-posts-container">
+                        <!-- Post cards populated here -->
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-      </div>
-    </div>
+        <!-- ================= 3. VERIFIED DOCTORS DIRECTORY ================= -->
+        <div id="view-doctors" class="hidden">
+            <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">Verified Healthcare Professionals</h2>
+                    <p style="color: var(--text-muted);">Licensed practitioners verified by MedNova administrative review.</p>
+                </div>
+                <div style="display: flex; gap: 0.6rem;">
+                    <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('doctor-register')"><i class="fa-solid fa-hospital-user"></i> Doctor Registration</button>
+                    <button class="btn btn-primary btn-sm" onclick="MedNova.openConsultationModal()"><i class="fa-solid fa-paper-plane"></i> Book Consultation</button>
+                </div>
+            </div>
 
-    <!-- ================= 3. VERIFIED DOCTORS DIRECTORY ================= -->
-    <div id="view-doctors" class="hidden">
-      <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">Verified Healthcare Professionals</h2>
-          <p style="color: var(--text-muted);">Licensed practitioners verified by MedNova administrative review.</p>
+            <div id="doctors-directory-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem;">
+                <!-- Doctor cards injected via JS -->
+            </div>
         </div>
-        <div style="display: flex; gap: 0.6rem;">
-          <button class="btn btn-outline btn-sm" onclick="MedNova.navigateTo('doctor-register')"><i class="fa-solid fa-hospital-user"></i> Doctor Registration</button>
-          <button class="btn btn-primary btn-sm" onclick="MedNova.openConsultationModal()"><i class="fa-solid fa-paper-plane"></i> Book Consultation</button>
-        </div>
-      </div>
 
-      <div id="doctors-directory-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem;">
-        <!-- Doctor cards injected via JS -->
-      </div>
-    </div>
-
-    <!-- ================= 4. DEDICATED DOCTOR REGISTRATION VIEW (Slide 15) ================= -->
-    <div id="view-doctor-register" class="hidden">
-      <div style="margin-bottom: 2rem; text-align: center;">
-        <span class="badge badge-green" style="font-size: 0.85rem; padding: 0.35rem 0.85rem;"><i class="fa-solid fa-user-doctor"></i> Medical Onboarding</span>
-        <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Doctor Registration & Application</h2>
-        <p style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Submit your medical credentials for administrator approval to join the verified MedNova healthcare network.</p>
-      </div>
-
-      <!-- Centered Doctor Application Card -->
-      <div style="max-width: 680px; margin: 0 auto;">
-        <div class="card" style="border-top: 4px solid var(--success); box-shadow: var(--shadow-md); padding: 2rem;">
-          <div style="margin-bottom: 1.5rem;">
-            <span class="badge badge-green"><i class="fa-solid fa-hospital-user"></i> Doctor Application</span>
-            <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-top: 0.4rem;">Doctor Application</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Submit your medical credentials for administrator approval.</p>
-          </div>
-
-          <form id="form-doctor-page-register" onsubmit="MedNova.handleDoctorPageRegister(event)">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-              <div class="form-group">
-                <label class="form-label">Username</label>
-                <input type="text" id="page-doc-username" class="form-control" placeholder="dr_smith" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Official Email</label>
-                <input type="email" id="page-doc-email" class="form-control" placeholder="doctor@hospital.org" required>
-              </div>
+        <!-- ================= 4. DEDICATED DOCTOR REGISTRATION VIEW (Slide 15) ================= -->
+        <div id="view-doctor-register" class="hidden">
+            <div style="margin-bottom: 2rem; text-align: center;">
+                <span class="badge badge-green" style="font-size: 0.85rem; padding: 0.35rem 0.85rem;"><i class="fa-solid fa-user-doctor"></i> Medical Onboarding</span>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Doctor Registration & Application</h2>
+                <p style="color: var(--text-muted); max-width: 620px; margin: 0 auto;">Submit your medical credentials for administrator approval to join the verified MedNova healthcare network.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-              <div class="form-group">
-                <label class="form-label">Medical Specialty</label>
-                <input type="text" id="page-doc-specialty" class="form-control" placeholder="Cardiology, General Medicine" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Medical License Number</label>
-                <input type="text" id="page-doc-license" class="form-control" placeholder="MD-123456" required>
-              </div>
-            </div>
+            <!-- Centered Doctor Application Card -->
+            <div style="max-width: 680px; margin: 0 auto;">
+                <div class="card" style="border-top: 4px solid var(--success); box-shadow: var(--shadow-md); padding: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span class="badge badge-green"><i class="fa-solid fa-hospital-user"></i> Doctor Application</span>
+                        <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-top: 0.4rem;">Doctor Application</h3>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Submit your medical credentials for administrator approval.</p>
+                    </div>
 
-            <div class="form-group">
-              <label class="form-label">Hospital / Clinic Affiliation</label>
-              <input type="text" id="page-doc-hospital" class="form-control" placeholder="City Hospital" required>
-            </div>
+                    <form id="form-doctor-page-register" onsubmit="MedNova.handleDoctorPageRegister(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Username</label>
+                                <input type="text" id="page-doc-username" class="form-control" placeholder="dr_smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Official Email</label>
+                                <input type="email" id="page-doc-email" class="form-control" placeholder="doctor@hospital.org" required>
+                            </div>
+                        </div>
 
-            <div class="form-group">
-              <label class="form-label">Professional Bio</label>
-              <textarea id="page-doc-bio" class="form-control" style="min-height: 95px;" placeholder="Brief summary of your experience..."></textarea>
-            </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Medical Specialty</label>
+                                <input type="text" id="page-doc-specialty" class="form-control" placeholder="Cardiology, General Medicine" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Medical License Number</label>
+                                <input type="text" id="page-doc-license" class="form-control" placeholder="MD-123456" required>
+                            </div>
+                        </div>
 
-            <div class="form-group">
-              <label class="form-label">Password</label>
-              <input type="password" id="page-doc-password" class="form-control" placeholder="Create password" required>
-            </div>
+                        <div class="form-group">
+                            <label class="form-label">Hospital / Clinic Affiliation</label>
+                            <input type="text" id="page-doc-hospital" class="form-control" placeholder="City Hospital" required>
+                        </div>
 
-            <button type="submit" class="btn btn-success" style="width: 100%; padding: 0.85rem; font-size: 1rem; margin-top: 0.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Professional Bio</label>
+                            <textarea id="page-doc-bio" class="form-control" style="min-height: 95px;" placeholder="Brief summary of your experience..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="page-doc-password" class="form-control" placeholder="Create password" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success" style="width: 100%; padding: 0.85rem; font-size: 1rem; margin-top: 0.5rem;">
               <i class="fa-solid fa-circle-check"></i> Submit Doctor Application
             </button>
-          </form>
+                    </form>
 
-          <div style="margin-top: 1.25rem; font-size: 0.82rem; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border-color); padding-top: 0.9rem;">
-            <i class="fa-solid fa-shield-halved text-success"></i> Administrators validate official licenses via the Verification Queue before granting access.
-          </div>
+                    <div style="margin-top: 1.25rem; font-size: 0.82rem; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border-color); padding-top: 0.9rem;">
+                        <i class="fa-solid fa-shield-halved text-success"></i> Administrators validate official licenses via the Verification Queue before granting access.
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- ================= 5. HEALTH RISK ASSESSMENT / AI TRIAGE VIEW (Problem Statement & Obj 4) ================= -->
-    <div id="view-risk" class="hidden">
-      <div style="margin-bottom: 2rem; text-align: center;">
-        <span class="badge badge-blue" style="font-size: 0.85rem; padding: 0.35rem 0.85rem;"><i class="fa-solid fa-shield-virus"></i> Confidential Triage</span>
-        <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Privacy-Preserving Health-Risk Assessment</h2>
-        <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">Evaluate your acute or chronic symptoms using clinical parameters. Your personal identity is never attached to this diagnostic calculation.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1050px; margin: 0 auto; align-items: start;">
-        
-        <!-- Input Form -->
-        <div class="card" style="border-top: 4px solid var(--primary);">
-          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-stethoscope text-primary"></i> Symptom & Vital Triage Input</h3>
-          <form id="form-risk-assessment" onsubmit="MedNova.handleRiskAssessment(event)">
-            <div class="form-group">
-              <label class="form-label">Symptoms & Concerns</label>
-              <textarea id="risk-symptoms" class="form-control" style="min-height: 85px;" placeholder="e.g. Mild chest tightness on exertion, intermittent dizziness, fatigue" required></textarea>
+        <!-- ================= 5. HEALTH RISK ASSESSMENT / AI TRIAGE VIEW (Problem Statement & Obj 4) ================= -->
+        <div id="view-risk" class="hidden">
+            <div style="margin-bottom: 2rem; text-align: center;">
+                <span class="badge badge-blue" style="font-size: 0.85rem; padding: 0.35rem 0.85rem;"><i class="fa-solid fa-shield-virus"></i> Confidential Triage</span>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Privacy-Preserving Health-Risk Assessment</h2>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">Evaluate your acute or chronic symptoms using clinical parameters. Your personal identity is never attached to this diagnostic calculation.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
-              <div class="form-group">
-                <label class="form-label">Systolic BP (mmHg)</label>
-                <input type="number" id="risk-systolic" class="form-control" placeholder="120" value="135" min="70" max="240">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Diastolic BP (mmHg)</label>
-                <input type="number" id="risk-diastolic" class="form-control" placeholder="80" value="88" min="40" max="150">
-              </div>
-            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1050px; margin: 0 auto; align-items: start;">
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
-              <div class="form-group">
-                <label class="form-label">Blood Sugar (mg/dL)</label>
-                <input type="number" id="risk-sugar" class="form-control" placeholder="100" value="115" min="40" max="500">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Duration</label>
-                <select id="risk-duration" class="form-control">
+                <!-- Input Form -->
+                <div class="card" style="border-top: 4px solid var(--primary);">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-stethoscope text-primary"></i> Symptom & Vital Triage Input</h3>
+                    <form id="form-risk-assessment" onsubmit="MedNova.handleRiskAssessment(event)">
+                        <div class="form-group">
+                            <label class="form-label">Symptoms & Concerns</label>
+                            <textarea id="risk-symptoms" class="form-control" style="min-height: 85px;" placeholder="e.g. Mild chest tightness on exertion, intermittent dizziness, fatigue" required></textarea>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+                            <div class="form-group">
+                                <label class="form-label">Systolic BP (mmHg)</label>
+                                <input type="number" id="risk-systolic" class="form-control" placeholder="120" value="135" min="70" max="240">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Diastolic BP (mmHg)</label>
+                                <input type="number" id="risk-diastolic" class="form-control" placeholder="80" value="88" min="40" max="150">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+                            <div class="form-group">
+                                <label class="form-label">Blood Sugar (mg/dL)</label>
+                                <input type="number" id="risk-sugar" class="form-control" placeholder="100" value="115" min="40" max="500">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Duration</label>
+                                <select id="risk-duration" class="form-control">
                   <option value="Less than 24 hours">Less than 24 hours</option>
                   <option value="1 - 3 days" selected>1 - 3 days</option>
                   <option value="1 - 2 weeks">1 - 2 weeks</option>
                   <option value="More than a month">More than a month</option>
                 </select>
-              </div>
-            </div>
+                            </div>
+                        </div>
 
-            <div class="form-group">
-              <label class="form-label">Self-Reported Pain Severity: <span id="pain-val-display" style="color: var(--primary); font-weight: 800;">4/10</span></label>
-              <input type="range" id="risk-pain" min="1" max="10" value="4" class="form-control" style="padding: 0; cursor: pointer;" oninput="document.getElementById('pain-val-display').textContent = this.value + '/10'">
-            </div>
+                        <div class="form-group">
+                            <label class="form-label">Self-Reported Pain Severity: <span id="pain-val-display" style="color: var(--primary); font-weight: 800;">4/10</span></label>
+                            <input type="range" id="risk-pain" min="1" max="10" value="4" class="form-control" style="padding: 0; cursor: pointer;" oninput="document.getElementById('pain-val-display').textContent = this.value + '/10'">
+                        </div>
 
-            <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
-              <input type="checkbox" id="risk-fever" style="width: 18px; height: 18px; cursor: pointer;">
-              <label for="risk-fever" style="cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Experiencing persistent fever or chills</label>
-            </div>
+                        <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+                            <input type="checkbox" id="risk-fever" style="width: 18px; height: 18px; cursor: pointer;">
+                            <label for="risk-fever" style="cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Experiencing persistent fever or chills</label>
+                        </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; margin-top: 0.5rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; margin-top: 0.5rem;">
               <i class="fa-solid fa-wand-magic-sparkles"></i> Compute Health Risk Analysis
             </button>
-          </form>
-        </div>
+                    </form>
+                </div>
 
-        <!-- Result Card -->
-        <div class="card" id="risk-result-container" style="border-top: 4px solid var(--primary); text-align: center;">
-          <div id="risk-initial-placeholder" style="padding: 3rem 1rem; color: var(--text-muted);">
-            <i class="fa-solid fa-laptop-medical" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
-            <h4 style="font-size: 1.15rem; color: var(--text-main);">Awaiting Assessment Parameters</h4>
-            <p style="font-size: 0.88rem;">Fill out the clinical parameters on the left to compute your health-risk triage score.</p>
-          </div>
+                <!-- Result Card -->
+                <div class="card" id="risk-result-container" style="border-top: 4px solid var(--primary); text-align: center;">
+                    <div id="risk-initial-placeholder" style="padding: 3rem 1rem; color: var(--text-muted);">
+                        <i class="fa-solid fa-laptop-medical" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
+                        <h4 style="font-size: 1.15rem; color: var(--text-main);">Awaiting Assessment Parameters</h4>
+                        <p style="font-size: 0.88rem;">Fill out the clinical parameters on the left to compute your health-risk triage score.</p>
+                    </div>
 
-          <div id="risk-result-card" class="hidden">
-            <div id="risk-gauge" class="risk-score-display low">
-              <span id="risk-score-num" style="font-size: 1.8rem;">28</span>
-              <span style="font-size: 0.7rem; text-transform: uppercase;">Index</span>
-            </div>
-            
-            <div id="risk-badge-display" class="badge badge-green" style="font-size: 0.85rem; padding: 0.35rem 0.85rem; margin-bottom: 0.75rem;">LOW RISK</div>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Triage Summary</h3>
-            <p id="risk-recommendation-text" style="font-size: 0.9rem; color: var(--text-body); line-height: 1.5; margin-bottom: 1rem;"></p>
+                    <div id="risk-result-card" class="hidden">
+                        <div id="risk-gauge" class="risk-score-display low">
+                            <span id="risk-score-num" style="font-size: 1.8rem;">28</span>
+                            <span style="font-size: 0.7rem; text-transform: uppercase;">Index</span>
+                        </div>
 
-            <div style="text-align: left; background: #f8fafc; border-radius: var(--radius-sm); padding: 0.85rem; margin-bottom: 1.25rem;">
-              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.35rem;">DETECTED RISK FACTORS:</div>
-              <ul id="risk-factors-list" style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-body);"></ul>
-            </div>
+                        <div id="risk-badge-display" class="badge badge-green" style="font-size: 0.85rem; padding: 0.35rem 0.85rem; margin-bottom: 0.75rem;">LOW RISK</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Triage Summary</h3>
+                        <p id="risk-recommendation-text" style="font-size: 0.9rem; color: var(--text-body); line-height: 1.5; margin-bottom: 1rem;"></p>
 
-            <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="MedNova.transferRiskToConsult()">
+                        <div style="text-align: left; background: #f8fafc; border-radius: var(--radius-sm); padding: 0.85rem; margin-bottom: 1.25rem;">
+                            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.35rem;">DETECTED RISK FACTORS:</div>
+                            <ul id="risk-factors-list" style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-body);"></ul>
+                        </div>
+
+                        <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="MedNova.transferRiskToConsult()">
               <i class="fa-solid fa-paper-plane"></i> Escalate to Doctor Consultation
             </button>
-          </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-      </div>
-    </div>
+        <!-- ================= 6. PATIENT CONSULTATIONS DASHBOARD (Slide 10 DFD 1.2) ================= -->
+        <div id="view-my-consultations" class="hidden">
+            <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">My Medical Consultations</h2>
+                    <p style="color: var(--text-muted);">Track consultation status, decrypt your symptoms, and review verified doctor advice.</p>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="MedNova.openConsultationModal()"><i class="fa-solid fa-plus"></i> New Consultation</button>
+            </div>
 
-    <!-- ================= 6. PATIENT CONSULTATIONS DASHBOARD (Slide 10 DFD 1.2) ================= -->
-    <div id="view-my-consultations" class="hidden">
-      <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">My Medical Consultations</h2>
-          <p style="color: var(--text-muted);">Track consultation status, decrypt your symptoms, and review verified doctor advice.</p>
+            <div id="patient-consultations-container">
+                <!-- Patient consultations loaded here -->
+            </div>
         </div>
-        <button class="btn btn-primary btn-sm" onclick="MedNova.openConsultationModal()"><i class="fa-solid fa-plus"></i> New Consultation</button>
-      </div>
 
-      <div id="patient-consultations-container">
-        <!-- Patient consultations loaded here -->
-      </div>
-    </div>
+        <!-- ================= 7. DOCTOR INBOX WORKSPACE (DFD 1.3) ================= -->
+        <div id="view-doctor-portal" class="hidden">
+            <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">Doctor Consultation Workspace</h2>
+                    <p style="color: var(--text-muted);">Review patient symptoms, decrypt medical concerns, and issue clinical guidance.</p>
+                </div>
+                <div class="badge badge-green"><i class="fa-solid fa-user-check"></i> Verified Practitioner</div>
+            </div>
 
-    <!-- ================= 7. DOCTOR INBOX WORKSPACE (DFD 1.3) ================= -->
-    <div id="view-doctor-portal" class="hidden">
-      <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">Doctor Consultation Workspace</h2>
-          <p style="color: var(--text-muted);">Review patient symptoms, decrypt medical concerns, and issue clinical guidance.</p>
+            <div id="doctor-consultations-list">
+                <!-- Consultation cases populated dynamically -->
+            </div>
         </div>
-        <div class="badge badge-green"><i class="fa-solid fa-user-check"></i> Verified Practitioner</div>
-      </div>
 
-      <div id="doctor-consultations-list">
-        <!-- Consultation cases populated dynamically -->
-      </div>
-    </div>
+        <!-- ================= 8. ADMIN PORTAL WORKSPACE (Slide 9 / DFD 1.1) ================= -->
+        <div id="view-admin" class="hidden">
+            <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">Administrative Control Center</h2>
+                    <p style="color: var(--text-muted);">Manage doctor credential verifications, patient accounts, community moderation, and security logs.</p>
+                </div>
+                <div class="badge badge-blue"><i class="fa-solid fa-shield-halved"></i> Root Admin</div>
+            </div>
 
-    <!-- ================= 8. ADMIN PORTAL WORKSPACE (Slide 9 / DFD 1.1) ================= -->
-    <div id="view-admin" class="hidden">
-      <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-main);">Administrative Control Center</h2>
-          <p style="color: var(--text-muted);">Manage doctor credential verifications, patient accounts, community moderation, and security logs.</p>
-        </div>
-        <div class="badge badge-blue"><i class="fa-solid fa-shield-halved"></i> Root Admin</div>
-      </div>
-
-      <!-- Admin Sub Navigation Tabs (Slide 9 DFD 1.1) -->
-      <div class="sub-nav-tabs">
-        <button class="sub-tab-btn active" id="btn-admin-tab-doctors" onclick="MedNova.switchAdminTab('doctors')">
+            <!-- Admin Sub Navigation Tabs (Slide 9 DFD 1.1) -->
+            <div class="sub-nav-tabs">
+                <button class="sub-tab-btn active" id="btn-admin-tab-doctors" onclick="MedNova.switchAdminTab('doctors')">
           <i class="fa-solid fa-user-doctor"></i> Doctor Applications
         </button>
-        <button class="sub-tab-btn" id="btn-admin-tab-patients" onclick="MedNova.switchAdminTab('patients')">
+                <button class="sub-tab-btn" id="btn-admin-tab-patients" onclick="MedNova.switchAdminTab('patients')">
           <i class="fa-solid fa-users"></i> Patient Management
         </button>
-        <button class="sub-tab-btn" id="btn-admin-tab-communities" onclick="MedNova.switchAdminTab('communities')">
+                <button class="sub-tab-btn" id="btn-admin-tab-communities" onclick="MedNova.switchAdminTab('communities')">
           <i class="fa-solid fa-comments"></i> Community Moderation
         </button>
-        <button class="sub-tab-btn" id="btn-admin-tab-logs" onclick="MedNova.switchAdminTab('logs')">
+                <button class="sub-tab-btn" id="btn-admin-tab-logs" onclick="MedNova.switchAdminTab('logs')">
           <i class="fa-solid fa-lock"></i> Security Audit Logs
         </button>
-      </div>
-
-      <!-- Tab 1: Doctor Verification Queue -->
-      <div id="admin-tab-doctors" class="card" style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-id-card-clip text-primary"></i> Doctor Verification Queue</h3>
-        <div class="table-responsive">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Doctor & Email</th>
-                <th>Specialization & Hospital</th>
-                <th>Medical License #</th>
-                <th>Applied Date</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="admin-doctors-table-body">
-              <!-- Admin doctor rows -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Tab 2: Patient Management -->
-      <div id="admin-tab-patients" class="card hidden" style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-users text-primary"></i> Registered Patient Accounts</h3>
-        <div class="table-responsive">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Display Alias / Pseudonym</th>
-                <th>Registered Email</th>
-                <th>Account Created</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="admin-patients-table-body">
-              <!-- Admin patient rows -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Tab 3: Community Moderation -->
-      <div id="admin-tab-communities" class="card hidden" style="margin-bottom: 2rem;">
-        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-comments text-primary"></i> Disease Support Groups Post Moderation</h3>
-        <div class="table-responsive">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Community</th>
-                <th>Author Alias</th>
-                <th>Post Title & Excerpt</th>
-                <th>Posted Date</th>
-                <th>Interactions</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="admin-community-posts-body">
-              <!-- Admin community posts rows -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Tab 4: Audit Logs -->
-      <div id="admin-tab-logs" class="card hidden">
-        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-lock text-primary"></i> Cryptographic & Platform Audit Logs</h3>
-        <div class="table-responsive">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Timestamp</th>
-                <th>Event Type</th>
-                <th>Actor</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody id="admin-audit-logs-body">
-              <!-- Audit logs rows -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Standard Healthcare SaaS Footer -->
-  <footer class="app-footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <div class="logo-brand" style="margin-bottom: 0.75rem;">
-          <div class="logo-icon"><i class="fa-solid fa-plus-circle"></i></div>
-          <span>MED<span style="color: #0f172a;">NOVA</span></span>
-        </div>
-        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 340px; margin-bottom: 1rem;">
-          A privacy-preserving healthcare web platform providing safe patient support, professional consultation, and health-risk triage protected by AES-256 and Zero-Knowledge pseudonyms.
-        </p>
-        <div style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5;">
-          MCA Academic Project &bull; TKMCE<br>
-          Dilsha Hamzathali (25MCA021) &bull; Siyana Hakkim (25MCA052)<br>
-          Project Guide: Prof. Gopika Gopan
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#" onclick="MedNova.navigateTo('home')">Home</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('communities')">Disease Support Groups</a></li>
-          <li><a href="#" onclick="MedNova.openConsultationModal()">Doctor Consultation</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('risk')">Health Risk Triage</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('doctors')">Verified Doctors Directory</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Support Circles</h4>
-        <ul>
-          <li><a href="#" onclick="MedNova.navigateTo('communities')">Cardiology & Heart Health</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('communities')">Oncology & Cancer Care</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('communities')">HIV & Immunology Circle</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('communities')">Diabetes & Metabolic Care</a></li>
-          <li><a href="#" onclick="MedNova.navigateTo('communities')">Mental Health Sanctuary</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Security & Trust</h4>
-        <ul>
-          <li><a href="#"><i class="fa-solid fa-shield-halved text-primary"></i> AES-256 Payload Storage</a></li>
-          <li><a href="#"><i class="fa-solid fa-key text-success"></i> Zero-Knowledge Aliases</a></li>
-          <li><a href="#"><i class="fa-solid fa-user-check text-primary"></i> Council-Verified Licenses</a></li>
-          <li><a href="#"><i class="fa-solid fa-clock-rotate-left text-warning"></i> Real-Time Audit Trails</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div>&copy; 2026 MedNova Healthcare Platform. All rights reserved. Designed for Confidential Care.</div>
-      <div style="display: flex; gap: 1rem;">
-        <span>SQLite / PostgreSQL Ready</span>
-        <span>&bull;</span>
-        <span>Django 5.2</span>
-        <span>&bull;</span>
-        <span>Bootstrap 5 Medical Theme</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ================= MODALS (Slide 14 & 15) ================= -->
-
-  <!-- Modal 1: MedNova Login (Slide 14) -->
-  <div class="modal-overlay" id="modal-login">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 800; color: var(--primary);">
-          <i class="fa-solid fa-circle-nodes"></i> MedNova Login
-        </div>
-        <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-login')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">Enter your credentials to sign in</p>
-        <form id="form-login" onsubmit="MedNova.handleLogin(event)">
-          <div class="form-group">
-            <label class="form-label">Username / Email</label>
-            <input type="text" id="login-username" class="form-control" placeholder="Enter username" required value="patient@example.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" id="login-password" class="form-control" placeholder="Enter password" required value="patient123">
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Sign In</button>
-        </form>
-        <div style="text-align: center; margin-top: 1.25rem; font-size: 0.88rem; color: var(--text-muted);">
-          Don't have an account? 
-          <a href="#" style="color: var(--primary); font-weight: 600;" onclick="MedNova.switchToModal('modal-login', 'modal-patient-signup')">Patient Signup</a> | 
-          <a href="#" style="color: var(--primary); font-weight: 600;" onclick="MedNova.switchToModal('modal-login', 'modal-doctor-apply')">Doctor Apply</a>
-        </div>
-        <div style="margin-top: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--text-muted);">
-          <strong>Quick Demo Accounts:</strong><br>
-          • Patient: <code>patient@example.com</code> / <code>patient123</code><br>
-          • Verified Doctor: <code>dr_smith</code> / <code>smith123</code><br>
-          • Admin: <code>admin</code> / <code>admin123</code>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2: Create Patient Account (Slide 14) -->
-  <div class="modal-overlay" id="modal-patient-signup">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div>
-          <span class="badge badge-blue"><i class="fa-solid fa-user"></i> Patient Signup</span>
-          <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Create Patient Account</h3>
-        </div>
-        <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-patient-signup')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Fill in your email and details to register as a patient.</p>
-        <form id="form-patient-signup" onsubmit="MedNova.handlePatientSignup(event)">
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" id="signup-email" class="form-control" placeholder="patient@example.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Display Name / Alias</label>
-            <input type="text" id="signup-alias" class="form-control" placeholder="e.g. John Doe or PatientUser" required>
-            <small style="color: var(--text-muted); font-size: 0.78rem;">This alias protects your privacy in public support groups.</small>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" id="signup-password" class="form-control" placeholder="Create a password" required>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Create Account</button>
-        </form>
-        <div style="text-align: center; margin-top: 1.25rem; font-size: 0.88rem; color: var(--text-muted);">
-          Already have an account? <a href="#" style="color: var(--primary); font-weight: 600;" onclick="MedNova.switchToModal('modal-patient-signup', 'modal-login')">Login</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3: Doctor Application (Slide 15) -->
-  <div class="modal-overlay" id="modal-doctor-apply">
-    <div class="modal-container" style="max-width: 600px;">
-      <div class="modal-header">
-        <div>
-          <span class="badge badge-green"><i class="fa-solid fa-hospital-user"></i> Doctor Application</span>
-          <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Doctor Application</h3>
-        </div>
-        <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-doctor-apply')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Submit your medical credentials for administrator approval.</p>
-        <form id="form-doctor-apply" onsubmit="MedNova.handleDoctorApply(event)">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
-            <div class="form-group">
-              <label class="form-label">Username</label>
-              <input type="text" id="doc-username" class="form-control" placeholder="dr_smith" required>
             </div>
-            <div class="form-group">
-              <label class="form-label">Official Email</label>
-              <input type="email" id="doc-email" class="form-control" placeholder="doctor@hospital.org" required>
-            </div>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
-            <div class="form-group">
-              <label class="form-label">Medical Specialty</label>
-              <input type="text" id="doc-specialty" class="form-control" placeholder="Cardiology, General Medicine" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Medical License Number</label>
-              <input type="text" id="doc-license" class="form-control" placeholder="MD-123456" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Hospital / Clinic Affiliation</label>
-            <input type="text" id="doc-hospital" class="form-control" placeholder="City Hospital" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Professional Bio</label>
-            <textarea id="doc-bio" class="form-control" placeholder="Brief summary of your experience..."></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" id="doc-password" class="form-control" placeholder="Create password" required>
-          </div>
-          <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 0.5rem;">Submit Application</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <!-- Modal 4: Request Doctor Consultation (Slide 15) -->
-  <div class="modal-overlay" id="modal-consultation">
-    <div class="modal-container" style="max-width: 580px;">
-      <div class="modal-header">
-        <div>
-          <span class="badge badge-blue"><i class="fa-solid fa-stethoscope"></i> Consultation Request</span>
-          <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Request Doctor Consultation</h3>
+            <!-- Tab 1: Doctor Verification Queue -->
+            <div id="admin-tab-doctors" class="card" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-id-card-clip text-primary"></i> Doctor Verification Queue</h3>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Doctor & Email</th>
+                                <th>Specialization & Hospital</th>
+                                <th>Medical License #</th>
+                                <th>Applied Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-doctors-table-body">
+                            <!-- Admin doctor rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab 2: Patient Management -->
+            <div id="admin-tab-patients" class="card hidden" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-users text-primary"></i> Registered Patient Accounts</h3>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Display Alias / Pseudonym</th>
+                                <th>Registered Email</th>
+                                <th>Account Created</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-patients-table-body">
+                            <!-- Admin patient rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab 3: Community Moderation -->
+            <div id="admin-tab-communities" class="card hidden" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-comments text-primary"></i> Disease Support Groups Post Moderation</h3>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Community</th>
+                                <th>Author Alias</th>
+                                <th>Post Title & Excerpt</th>
+                                <th>Posted Date</th>
+                                <th>Interactions</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-community-posts-body">
+                            <!-- Admin community posts rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab 4: Audit Logs -->
+            <div id="admin-tab-logs" class="card hidden">
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-lock text-primary"></i> Cryptographic & Platform Audit Logs</h3>
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Event Type</th>
+                                <th>Actor</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-audit-logs-body">
+                            <!-- Audit logs rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-consultation')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Send a consultation message to a verified healthcare professional.</p>
-        <form id="form-consultation" onsubmit="MedNova.handleConsultationSubmit(event)">
-          <div class="form-group">
-            <label class="form-label">Select Doctor</label>
-            <select id="consult-doctor-select" class="form-control">
+
+    </main>
+
+    <!-- Standard Healthcare SaaS Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-brand" style="margin-bottom: 0.75rem;">
+                    <div class="logo-icon"><i class="fa-solid fa-plus-circle"></i></div>
+                    <span>MED<span style="color: #0f172a;">NOVA</span></span>
+                </div>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 340px; margin-bottom: 1rem;">
+                    A privacy-preserving healthcare web platform providing safe patient support, professional consultation, and health-risk triage protected by AES-256 and Zero-Knowledge pseudonyms.
+                </p>
+                <div style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5;">
+                    MCA Academic Project &bull; TKMCE<br> Dilsha Hamzathali (25MCA021) &bull; Siyana Hakkim (25MCA052)<br> Project Guide: Prof. Gopika Gopan
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#" onclick="MedNova.navigateTo('home')">Home</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('communities')">Disease Support Groups</a></li>
+                    <li><a href="#" onclick="MedNova.openConsultationModal()">Doctor Consultation</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('risk')">Health Risk Triage</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('doctors')">Verified Doctors Directory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support Circles</h4>
+                <ul>
+                    <li><a href="#" onclick="MedNova.navigateTo('communities')">Cardiology & Heart Health</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('communities')">Oncology & Cancer Care</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('communities')">HIV & Immunology Circle</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('communities')">Diabetes & Metabolic Care</a></li>
+                    <li><a href="#" onclick="MedNova.navigateTo('communities')">Mental Health Sanctuary</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Security & Trust</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-shield-halved text-primary"></i> AES-256 Payload Storage</a></li>
+                    <li><a href="#"><i class="fa-solid fa-key text-success"></i> Zero-Knowledge Aliases</a></li>
+                    <li><a href="#"><i class="fa-solid fa-user-check text-primary"></i> Council-Verified Licenses</a></li>
+                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left text-warning"></i> Real-Time Audit Trails</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>&copy; 2026 MedNova Healthcare Platform. All rights reserved. Designed for Confidential Care.</div>
+            <div style="display: flex; gap: 1rem;">
+                <span>SQLite / PostgreSQL Ready</span>
+                <span>&bull;</span>
+                <span>Django 5.2</span>
+                <span>&bull;</span>
+                <span>Bootstrap 5 Medical Theme</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODALS (Slide 14 & 15) ================= -->
+
+    <!-- Modal 1: MedNova Login (Slide 14) -->
+    <div class="modal-overlay" id="modal-login">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 800; color: var(--primary);">
+                    <i class="fa-solid fa-circle-nodes"></i> MedNova Login
+                </div>
+                <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-login')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">Enter your credentials to sign in</p>
+                <form id="form-login" onsubmit="MedNova.handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">Username / Email</label>
+                        <input type="text" id="login-username" class="form-control" placeholder="Enter username" required value="patient@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" id="login-password" class="form-control" placeholder="Enter password" required value="patient123">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Sign In</button>
+                </form>
+                <div style="text-align: center; margin-top: 1.25rem; font-size: 0.88rem; color: var(--text-muted);">
+                    Don't have an account?
+                    <a href="#" style="color: var(--primary); font-weight: 600;" onclick="MedNova.switchToModal('modal-login', 'modal-patient-signup')">Patient Signup</a> |
+                    <a href="#" style="color: var(--primary); font-weight: 600;" onclick="MedNova.switchToModal('modal-login', 'modal-doctor-apply')">Doctor Apply</a>
+                </div>
+                <div style="margin-top: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--text-muted);">
+                    <strong>Quick Demo Accounts:</strong><br> • Patient: <code>patient@example.com</code> / <code>patient123</code><br> • Verified Doctor: <code>dr_smith</code> / <code>smith123</code><br> • Admin: <code>admin</code> / <code>admin123</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Create Patient Account (Slide 14) -->
+    <div class="modal-overlay" id="modal-patient-signup">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <span class="badge badge-blue"><i class="fa-solid fa-user"></i> Patient Signup</span>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Create Patient Account</h3>
+                </div>
+                <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-patient-signup')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Fill in your email and details to register as a patient.</p>
+                <form id="form-patient-signup" onsubmit="MedNova.handlePatientSignup(event)">
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" id="signup-email" class="form-control" placeholder="patient@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Display Name / Alias</label>
+                        <input type="text" id="signup-alias" class="form-control" placeholder="e.g. John Doe or PatientUser" required>
+                        <small style="color: var(--text-muted); font-size: 0.78rem;">This alias protects your privacy in public support groups.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" id="signup-password" class="form-control" placeholder="Create a password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Create Account</button>
+                </form>
+                <div style="text-align: center; margin-top: 1.25rem; font-size: 0.88rem; color: var(--text-muted);">
+                    Already have an account? <a href="#" style="color: var(--primary); font-weight: 600;" onclick="MedNova.switchToModal('modal-patient-signup', 'modal-login')">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Doctor Application (Slide 15) -->
+    <div class="modal-overlay" id="modal-doctor-apply">
+        <div class="modal-container" style="max-width: 600px;">
+            <div class="modal-header">
+                <div>
+                    <span class="badge badge-green"><i class="fa-solid fa-hospital-user"></i> Doctor Application</span>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Doctor Application</h3>
+                </div>
+                <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-doctor-apply')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Submit your medical credentials for administrator approval.</p>
+                <form id="form-doctor-apply" onsubmit="MedNova.handleDoctorApply(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" id="doc-username" class="form-control" placeholder="dr_smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Official Email</label>
+                            <input type="email" id="doc-email" class="form-control" placeholder="doctor@hospital.org" required>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+                        <div class="form-group">
+                            <label class="form-label">Medical Specialty</label>
+                            <input type="text" id="doc-specialty" class="form-control" placeholder="Cardiology, General Medicine" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Medical License Number</label>
+                            <input type="text" id="doc-license" class="form-control" placeholder="MD-123456" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Hospital / Clinic Affiliation</label>
+                        <input type="text" id="doc-hospital" class="form-control" placeholder="City Hospital" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Professional Bio</label>
+                        <textarea id="doc-bio" class="form-control" placeholder="Brief summary of your experience..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" id="doc-password" class="form-control" placeholder="Create password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 0.5rem;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Request Doctor Consultation (Slide 15) -->
+    <div class="modal-overlay" id="modal-consultation">
+        <div class="modal-container" style="max-width: 580px;">
+            <div class="modal-header">
+                <div>
+                    <span class="badge badge-blue"><i class="fa-solid fa-stethoscope"></i> Consultation Request</span>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Request Doctor Consultation</h3>
+                </div>
+                <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-consultation')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Send a consultation message to a verified healthcare professional.</p>
+                <form id="form-consultation" onsubmit="MedNova.handleConsultationSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label">Select Doctor</label>
+                        <select id="consult-doctor-select" class="form-control">
               <option value="any">-- Any Available Doctor --</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Subject / Main Concern</label>
-            <input type="text" id="consult-subject" class="form-control" placeholder="e.g. Sharp chest pain during exercise" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Detailed Description</label>
-            <textarea id="consult-description" class="form-control" style="min-height: 120px;" placeholder="Describe your symptoms, how long you have felt them, and relevant medical details..." required></textarea>
-            <div style="display: flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem; font-size: 0.78rem; color: #16a34a;">
-              <i class="fa-solid fa-lock"></i> Secured with client-side & AES-256 server database encryption
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject / Main Concern</label>
+                        <input type="text" id="consult-subject" class="form-control" placeholder="e.g. Sharp chest pain during exercise" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Detailed Description</label>
+                        <textarea id="consult-description" class="form-control" style="min-height: 120px;" placeholder="Describe your symptoms, how long you have felt them, and relevant medical details..." required></textarea>
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem; font-size: 0.78rem; color: #16a34a;">
+                            <i class="fa-solid fa-lock"></i> Secured with client-side & AES-256 server database encryption
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
             <i class="fa-solid fa-paper-plane"></i> Send Consultation Request
           </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 5: New Community Post (Slide 16) -->
-  <div class="modal-overlay" id="modal-new-post">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div>
-          <span class="badge badge-blue"><i class="fa-solid fa-comment-medical"></i> Anonymous Post</span>
-          <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Share Experience or Question</h3>
+                </form>
+            </div>
         </div>
-        <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-new-post')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-          Your identity will be masked as <span id="post-alias-preview" class="author-pill">AnonPatient#...</span>
-        </p>
-        <form id="form-new-post" onsubmit="MedNova.handleNewPostSubmit(event)">
-          <div class="form-group">
-            <label class="form-label">Post Title</label>
-            <input type="text" id="post-title" class="form-control" placeholder="e.g. Managing daily BP spike naturally" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Your Experience / Discussion</label>
-            <textarea id="post-content" class="form-control" style="min-height: 110px;" placeholder="Describe dietary changes, recovery tips, or wellness questions..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+    </div>
+
+    <!-- Modal 5: New Community Post (Slide 16) -->
+    <div class="modal-overlay" id="modal-new-post">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <span class="badge badge-blue"><i class="fa-solid fa-comment-medical"></i> Anonymous Post</span>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Share Experience or Question</h3>
+                </div>
+                <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-new-post')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                    Your identity will be masked as <span id="post-alias-preview" class="author-pill">AnonPatient#...</span>
+                </p>
+                <form id="form-new-post" onsubmit="MedNova.handleNewPostSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label">Post Title</label>
+                        <input type="text" id="post-title" class="form-control" placeholder="e.g. Managing daily BP spike naturally" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Your Experience / Discussion</label>
+                        <textarea id="post-content" class="form-control" style="min-height: 110px;" placeholder="Describe dietary changes, recovery tips, or wellness questions..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
             Publish Anonymously
           </button>
-        </form>
-      </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Modal 6: Doctor Reply Modal -->
-  <div class="modal-overlay" id="modal-doctor-reply">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div>
-          <span class="badge badge-green"><i class="fa-solid fa-notes-medical"></i> Clinical Guidance</span>
-          <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Reply to Consultation Case</h3>
-        </div>
-        <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-doctor-reply')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div id="reply-case-summary" style="margin-bottom: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: var(--radius-sm); font-size: 0.85rem;">
-          <!-- Case details -->
-        </div>
-        <form id="form-doctor-reply" onsubmit="MedNova.handleDoctorReplySubmit(event)">
-          <input type="hidden" id="reply-case-id">
-          <div class="form-group">
-            <label class="form-label">Professional Medical Advice / Recommendations</label>
-            <textarea id="reply-advice-text" class="form-control" style="min-height: 120px;" placeholder="Provide recommendations, necessary diagnostics, or medication guidance..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-success" style="width: 100%;">
+    <!-- Modal 6: Doctor Reply Modal -->
+    <div class="modal-overlay" id="modal-doctor-reply">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <span class="badge badge-green"><i class="fa-solid fa-notes-medical"></i> Clinical Guidance</span>
+                    <h3 style="font-size: 1.2rem; font-weight: 800; margin-top: 0.25rem;">Reply to Consultation Case</h3>
+                </div>
+                <button class="btn btn-outline btn-sm btn-icon" onclick="MedNova.closeModal('modal-doctor-reply')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="reply-case-summary" style="margin-bottom: 1rem; padding: 0.75rem; background: #f8fafc; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                    <!-- Case details -->
+                </div>
+                <form id="form-doctor-reply" onsubmit="MedNova.handleDoctorReplySubmit(event)">
+                    <input type="hidden" id="reply-case-id">
+                    <div class="form-group">
+                        <label class="form-label">Professional Medical Advice / Recommendations</label>
+                        <textarea id="reply-advice-text" class="form-control" style="min-height: 120px;" placeholder="Provide recommendations, necessary diagnostics, or medication guidance..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: 100%;">
             Send Clinical Advice
           </button>
-        </form>
-      </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Toast Notification Container -->
-  <div id="toast-container"></div>
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
 
-  <!-- Scripts -->
-  <script src="/static/js/app.js"></script>
+    <!-- Scripts -->
+    <script src="/static/js/app.js"></script>
 </body>
+
 </html>

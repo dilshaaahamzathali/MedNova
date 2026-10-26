@@ -4,77 +4,77 @@
  */
 
 window.MedNovaDoctor = {
-  activeCaseId: null,
+        activeCaseId: null,
 
-  init() {
-    this.bindDoctorEvents();
-  },
+        init() {
+            this.bindDoctorEvents();
+        },
 
-  bindDoctorEvents() {
-    // Doctor Sidebar Menu
-    document.querySelectorAll('#doctor-sidebar-menu .menu-item').forEach(item => {
-      item.addEventListener('click', (e) => {
-        const viewId = e.currentTarget.dataset.docView;
-        this.switchDoctorTab(viewId);
-      });
-    });
+        bindDoctorEvents() {
+            // Doctor Sidebar Menu
+            document.querySelectorAll('#doctor-sidebar-menu .menu-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const viewId = e.currentTarget.dataset.docView;
+                    this.switchDoctorTab(viewId);
+                });
+            });
 
-    // Consultation Inbox Filter Buttons
-    document.querySelectorAll('.inbox-filter-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        document.querySelectorAll('.inbox-filter-btn').forEach(b => b.classList.remove('active'));
-        e.currentTarget.classList.add('active');
-        const filter = e.currentTarget.dataset.filter;
-        this.renderConsultationInbox(filter);
-      });
-    });
+            // Consultation Inbox Filter Buttons
+            document.querySelectorAll('.inbox-filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.inbox-filter-btn').forEach(b => b.classList.remove('active'));
+                    e.currentTarget.classList.add('active');
+                    const filter = e.currentTarget.dataset.filter;
+                    this.renderConsultationInbox(filter);
+                });
+            });
 
-    // Form Submit for Medical Advice Response
-    const adviceForm = document.getElementById('form-doctor-advice');
-    if (adviceForm) {
-      adviceForm.addEventListener('submit', (e) => this.handleAdviceSubmit(e));
-    }
+            // Form Submit for Medical Advice Response
+            const adviceForm = document.getElementById('form-doctor-advice');
+            if (adviceForm) {
+                adviceForm.addEventListener('submit', (e) => this.handleAdviceSubmit(e));
+            }
 
-    // Form Submit for New Health Article
-    const articleForm = document.getElementById('form-create-article');
-    if (articleForm) {
-      articleForm.addEventListener('submit', (e) => this.handleArticleSubmit(e));
-    }
-  },
+            // Form Submit for New Health Article
+            const articleForm = document.getElementById('form-create-article');
+            if (articleForm) {
+                articleForm.addEventListener('submit', (e) => this.handleArticleSubmit(e));
+            }
+        },
 
-  switchDoctorTab(viewId = 'inbox') {
-    document.querySelectorAll('#doctor-sidebar-menu .menu-item').forEach(i => i.classList.remove('active'));
-    const activeItem = document.querySelector(`#doctor-sidebar-menu .menu-item[data-doc-view="${viewId}"]`);
-    if (activeItem) activeItem.classList.add('active');
+        switchDoctorTab(viewId = 'inbox') {
+            document.querySelectorAll('#doctor-sidebar-menu .menu-item').forEach(i => i.classList.remove('active'));
+            const activeItem = document.querySelector(`#doctor-sidebar-menu .menu-item[data-doc-view="${viewId}"]`);
+            if (activeItem) activeItem.classList.add('active');
 
-    const views = ['doc-view-inbox', 'doc-view-articles', 'doc-view-profile'];
-    views.forEach(v => {
-      const el = document.getElementById(v);
-      if (el) el.classList.add('hidden');
-    });
+            const views = ['doc-view-inbox', 'doc-view-articles', 'doc-view-profile'];
+            views.forEach(v => {
+                const el = document.getElementById(v);
+                if (el) el.classList.add('hidden');
+            });
 
-    const targetEl = document.getElementById(`doc-view-${viewId}`);
-    if (targetEl) targetEl.classList.remove('hidden');
+            const targetEl = document.getElementById(`doc-view-${viewId}`);
+            if (targetEl) targetEl.classList.remove('hidden');
 
-    if (viewId === 'inbox') this.renderConsultationInbox('ALL');
-    else if (viewId === 'articles') this.renderDoctorArticles();
-    else if (viewId === 'profile') this.renderProfile();
-  },
+            if (viewId === 'inbox') this.renderConsultationInbox('ALL');
+            else if (viewId === 'articles') this.renderDoctorArticles();
+            else if (viewId === 'profile') this.renderProfile();
+        },
 
-  render() {
-    this.switchDoctorTab('inbox');
-    this.renderDoctorHeaderProfile();
-    this.renderConsultationInbox('ALL');
-    this.renderDoctorArticles();
-    this.renderProfile();
-  },
+        render() {
+            this.switchDoctorTab('inbox');
+            this.renderDoctorHeaderProfile();
+            this.renderConsultationInbox('ALL');
+            this.renderDoctorArticles();
+            this.renderProfile();
+        },
 
-  renderDoctorHeaderProfile() {
-    const user = MedNovaData.currentUser;
-    const profileBanner = document.getElementById('doc-profile-banner');
-    if (!profileBanner) return;
+        renderDoctorHeaderProfile() {
+            const user = MedNovaData.currentUser;
+            const profileBanner = document.getElementById('doc-profile-banner');
+            if (!profileBanner) return;
 
-    profileBanner.innerHTML = `
+            profileBanner.innerHTML = `
       <div class="glass-card p-4" style="background: linear-gradient(135deg, rgba(204, 251, 241, 0.4) 0%, rgba(219, 234, 254, 0.4) 100%); display: flex; justify-content: space-between; align-items: center;">
         <div style="display: flex; align-items: center; gap: 1.25rem;">
           <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-gradient); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: var(--shadow-glow);">
@@ -100,23 +100,23 @@ window.MedNovaDoctor = {
         </div>
       </div>
     `;
-  },
+        },
 
-  renderConsultationInbox(filter = 'ALL') {
-    const container = document.getElementById('consultations-inbox-grid');
-    if (!container) return;
+        renderConsultationInbox(filter = 'ALL') {
+            const container = document.getElementById('consultations-inbox-grid');
+            if (!container) return;
 
-    let cases = MedNovaData.consultations;
-    if (filter === 'NEW') cases = cases.filter(c => c.status === 'NEW');
-    else if (filter === 'IN_REVIEW') cases = cases.filter(c => c.status === 'IN_REVIEW');
-    else if (filter === 'RESOLVED') cases = cases.filter(c => c.status === 'RESOLVED');
+            let cases = MedNovaData.consultations || [];
+            if (filter === 'NEW') cases = cases.filter(c => c.status === 'NEW');
+            else if (filter === 'IN_REVIEW') cases = cases.filter(c => c.status === 'IN_REVIEW');
+            else if (filter === 'RESOLVED') cases = cases.filter(c => c.status === 'RESOLVED');
 
-    if (cases.length === 0) {
-      container.innerHTML = `<div class="glass-card p-4" style="grid-column: 1 / -1; text-align: center; color: var(--text-muted);">No consultation requests in this inbox category.</div>`;
-      return;
-    }
+            if (cases.length === 0) {
+                container.innerHTML = `<div class="glass-card p-4" style="grid-column: 1 / -1; text-align: center; color: var(--text-muted);">No consultation requests in this inbox category.</div>`;
+                return;
+            }
 
-    container.innerHTML = cases.map(c => `
+            container.innerHTML = cases.map(c => `
       <div class="glass-card case-card">
         <div class="case-header">
           <span class="case-id"><i class="fa-solid fa-shield-halved text-teal"></i> ${c.id}</span>

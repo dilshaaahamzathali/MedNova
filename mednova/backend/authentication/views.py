@@ -210,7 +210,8 @@ def list_doctors(request):
 @csrf_exempt
 def verify_doctor(request, doctor_id):
     if request.method == 'POST':
-        action = request.GET.get('action', 'approve')
+       action = request.GET.get('action', 'approve')
+    
         try:
             doc = DoctorProfile.objects.get(id=doctor_id)
             if action == 'approve':

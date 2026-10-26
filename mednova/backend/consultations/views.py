@@ -248,5 +248,5 @@ def assess_health_risk(request):
             })
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
-    return JsonResponse({'error': 'POST method required'}, status=400)
+    return JsonResponse({'error': 'POST method required'},  status=400)
 
